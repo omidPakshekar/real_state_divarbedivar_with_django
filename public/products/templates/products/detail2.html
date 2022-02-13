@@ -1,0 +1,743 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block title %}
+  <title>مسکن دیوار به دیوار | جزییات</title>
+{% endblock title %}
+
+
+{% block add_css %}
+<link rel="stylesheet" href="{% static 'home/css/style.css' %}" type="text/css" media="screen" />
+
+<script defer src="{% static 'home/js/jquery.flexslider.js' %}"></script>
+<link rel="stylesheet" href="{% static 'home/css/flexslider.css' %}" type="text/css" media="screen" />
+{% endblock add_css %}
+
+
+{% block content %}
+<div class="container">
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+          <img class="modal-content" id="img01">
+        <div id="caption"></div>
+      </div>
+      <div style="margin-top: 20px;" class="container">
+          <div class="row">
+
+            <div class="col-sm-12 col-lg-8 col-md-6">
+              <section class="slider">
+                  <div id="slider" class="flexslider">
+                      <ul class="slides">
+                        <!-- 1  -->
+                        {% if object.image %}
+                          {% thumbnail object.image "500" as im %}
+                            <li>
+                              <img id="myImg" src="{{im.url}}" class="detail-img-one" />
+                            </li>
+                          {% endthumbnail %}
+                        {% else %}
+                          <li >
+                            <img  id="myImg"  src="{% static 'home/asse/photo/img-404.png' %}" class="detail-img-one" />
+                          </li>
+                        {% endif %}
+                        <!-- 2  -->
+                        {% if object.image2 %}
+                        {% thumbnail object.image2  "500"  as im %}
+                          <li >
+                            <img id="myImg2" src="{{im.url}}" class="detail-img-one" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+                        <!-- 3  -->
+                        {% if object.image3 %}
+                        {% thumbnail object.image3  "500"  as im %}
+
+                          <li >
+                            <img id="myImg3" src="{{im.url}}" class="detail-img-one" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+                        <!-- 4  -->
+                        {% if object.image4 %}
+                        {% thumbnail object.image4  "500"  as im %}
+
+                          <li >
+                            <img id="myImg4" src="{{im.url}}" class="detail-img-one" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+
+                        <!-- 5  -->
+                        {% if object.image5 %}
+                        {% thumbnail object.image5  "500"  as im %}
+
+                          <li >
+                            <img id="myImg5" src="{{im.url}}" class="detail-img-one" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+                        <!-- 6 -->
+                        {% if object.image6 %}
+                        {% thumbnail object.image6 "500"  as im %}
+
+                          <li >
+                            <img id="myImg6" src="{{im.url}}" class="detail-img-one" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+                        <!-- 7  -->
+                        {% if object.image7 %}
+                        {% thumbnail object.image7 "500"  as im %}
+
+                          <li >
+                            <img id="myImg7" src="{{im.url}}" class="detail-img-one" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+                        <!-- 8  -->
+                        {% if object.image8 %}
+                        {% thumbnail object.image8  "500" as im %}
+
+                          <li >
+                            <img id="myImg8" src="{{im.url}}" class="detail-img-one" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+                        <!-- 1  -->
+                        {% if object.image9 %}
+                        {% thumbnail object.image9 "500" as im %}
+
+                          <li >
+                            <img id="myImg9" src="{{im.url}}" class="detail-img-one" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+                        <!-- 10  -->
+                        {% if object.image10 %}
+                        {% thumbnail object.image10 "500" as im %}
+
+                        <li >
+                        <img id="myImg10" src="{{im.url}}" class="detail-img-one" />
+                        </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 11  -->
+                        {% if object.image11 %}
+                        {% thumbnail object.image11 "500" as im %}
+
+                        <li >
+                        <img id="myImg11" src="{{im.url}}" class="detail-img-one" />
+                        </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+
+                        {% if object.image12 %}
+                        {% thumbnail object.image12 "500"  as im %}
+
+                        <li >
+                        <img id="myImg12" src="{{im.url}}" class="detail-img-one" />
+                        </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+                        <!-- 13  -->
+                        {% if object.image13 %}
+                        {% thumbnail object.image13 "500" as im %}
+                          <li >
+                            <img id="myImg13" src="{{im.url}}" class="detail-img-one" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+                        <!-- 14 -->
+                        {% if object.image14 %}
+                        {% thumbnail object.image14 "500" as im %}
+                          <li >
+                            <img id="myImg14" src="{{im.url}}" class="detail-img-one" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+                        <!-- 15  -->
+                        {% if object.image15 %}
+                        {% thumbnail object.image15 "500" as im %}
+                          <li >
+                            <img id="myImg15" src="{{im.url}}" class="detail-img-one" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+                        <!-- 16  -->
+                        {% if object.image16 %}
+                        {% thumbnail object.image16 "500" as im %}
+                          <li >
+                            <img id="myImg16" src="{{im.url}}" class="detail-img-one" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+                        <!-- 17  -->
+                        {% if object.image17 %}
+                        {% thumbnail object.image17 "500" as im %}
+                          <li >
+                            <img id="myImg17" src="{{im.url}}" class="detail-img-one" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+                        <!-- 18  -->
+                        {% if object.image18 %}
+                        {% thumbnail object.image18 "500" as im %}
+                          <li >
+                            <img id="myImg18" src="{{im.url}}" class="detail-img-one" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+                        <!-- 19 -->
+                        {% if object.image19 %}
+                        {% thumbnail object.image19 "500" as im %}
+                          <li >
+                            <img id="myImg19" src="{{im.url}}" class="detail-img-one" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+                        <!-- 20 -->
+                        {% if object.image20 %}
+                        {% thumbnail object.image20 "500" as im %}
+                          <li >
+                            <img id="myImg20" src="{{im.url}}" class="detail-img-one" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                     </ul>
+                  </div>
+                  <div id="carousel" class="flexslider">
+                      <ul class="slides">
+
+                        <!-- 1  -->
+                        {% if object.image %}
+                        {% thumbnail object.image "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;" src="{{im.url}}" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 2 -->
+                        {% if object.image2 %}
+                        {% thumbnail object.image2 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;"  src="{{im.url}}" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 3 -->
+                        {% if object.image3 %}
+                        {% thumbnail object.image3 "300x300" as im %}
+                          <li>
+                              <img  style="height: 130px;"  src="{{im.url}}"  />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 4 -->
+                        {% if object.image4 %}
+                        {% thumbnail object.image4 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;"  src="{{im.url}}" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 5 -->
+                        {% if object.image5 %}
+                        {% thumbnail object.image5 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;"  src="{{im.url}}"  />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 6 -->
+                        {% if object.image6 %}
+                        {% thumbnail object.image6 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;"   src="{{im.url}}" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 7 -->
+                        {% if object.image7 %}
+                        {% thumbnail object.image7 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;"  src="{{im.url}}"   />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 8 -->
+                        {% if object.image8 %}
+                        {% thumbnail object.image8 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;"  src="{{im.url}}"   />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 9 -->
+                        {% if object.image9 %}
+                        {% thumbnail object.image9 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;"   src="{{im.url}}" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 10 -->
+                        {% if object.image10 %}
+                        {% thumbnail object.image10 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;"   src="{{im.url}}"  />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 11 -->
+                        {% if object.image11 %}
+                        {% thumbnail object.image11 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;"  src="{{im.url}}"  />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 12 -->
+                        {% if object.image12 %}
+                        {% thumbnail object.image12 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;"  src="{{im.url}}"  />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 13  -->
+                        {% if object.image13 %}
+                        {% thumbnail object.image13 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;" src="{{im.url}}" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 14  -->
+                        {% if object.image14 %}
+                        {% thumbnail object.image14 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;" src="{{im.url}}" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 15  -->
+                        {% if object.image15 %}
+                        {% thumbnail object.image15 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;" src="{{im.url}}" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 16  -->
+                        {% if object.image16 %}
+                        {% thumbnail object.image16 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;" src="{{im.url}}" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 17  -->
+                        {% if object.image17 %}
+                        {% thumbnail object.image17 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;" src="{{im.url}}" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 18  -->
+                        {% if object.image18 %}
+                        {% thumbnail object.image18 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;" src="{{im.url}}" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 19  -->
+                        {% if object.image19 %}
+                        {% thumbnail object.image19 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;" src="{{im.url}}" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+                        <!-- 20  -->
+                        {% if object.image20 %}
+                        {% thumbnail object.image20 "300x300" as im %}
+                          <li>
+                              <img style="height: 130px;" src="{{im.url}}" />
+                          </li>
+                        {% endthumbnail %}
+                        {% endif %}
+
+                      </ul>
+                  </div>
+              </section>
+
+            </div> <!-- col-md-6 -->
+
+
+
+            <div  class= " col-sm-12 col-lg-4 col-md-6">
+              <h4 style="padding-top: 10%;" class="h-detail-description font-Lalezar-h3"> خونه در خیابان معلم</h4>
+            <div >
+              <ul class="ul-li ul-detail-description font-mirza-li">
+                <li style="color: #007b5e;">{% if object.type == 'frosh' %} فروش {% elif object.type == 'villa' %} ویلا  {%  elif object.type == 'rhn'  %} رهن  {%  elif object.type == 'ejare'  %} اجاره {%  elif object.type == 'proje'  %} پروژه {% endif %}</li>
+                {% if object.type == 'frosh' or object.type == 'villa' or object.type == 'proje'   %}
+                  <li > {{object.price_met}} :قیمت هر متر مربع  <i class="fas fa-money-bill-wave"></i></li>
+                  <li >{{object.price}}: قیمت کلی  <i class="fas fa-money-bill-wave"></i></li>
+
+                {%  elif object.type == 'rhn'  %}
+                  <li >{{object.price}}: قیمت رهن <i class="fas fa-money-bill-wave"></i></li>
+                {%  elif object.type == 'ejare'  %}
+                  <li > {{object.price_met}} : اجاره ماهانه <i class="fas fa-money-bill-wave"></i></li>
+                  <li >{{object.price}}: پیش پول  <i class="fas fa-money-bill-wave"></i></li>
+                {% endif %}
+                <li >
+                  تعداد اناق: {{object.bedroom}}  <i class="fas fa-bed"></i>
+                </li>
+                <li >پارکینگ: {% if object.parking %} دارد{% else %} ندارد {% endif %} <i class="fas fa-parking"></i></li>
+                <li >زمان ساخت: {% if object.year == 0 %}نوساز{% else %} {{object.year}} {% endif %}<i class="fa fa-calendar" aria-hidden="true"></i></li>
+                <li >آدرس: {{object.address}}</li>
+                <li style="color:#e99c2e"> {{object.file_number}} : شماره فایل </li>
+                <li >09198164976 : شماره تماس مشاور  <i class="fas fa-phone"></i></li>
+                <p class="font-Lalezar"> مشاور فروش : فرزاد رافع</p>
+
+                <div class="call-block" >
+                  <a class="btn btn-dark" href="tel:09198164976">تماس با مشاور فروش</a>
+                  <a style="margin-left: 5%; padding-left:10%; padding-right:10%;" class="btn btn-dark" href="tel:01333261533"> تماس با دفتر </a>
+
+                </div>
+                <li class="p-detail-description">توضیحات : {{object.description}} </li>
+                {% if user.is_authenticated %}
+                <form  action="." method="post">
+                  {% csrf_token %}
+                  <div  style="margin-top: 5px; margin-right: 2px;">
+                    <button type="submit" style="background-color:red;" class="btn btn-dark" href="#">
+                      حذف
+                    </button>
+                  </div>
+                </form>
+                {% endif %}
+
+              </ul>
+            </div>
+            <div class="clearfix"> </div>
+            <!-- add google map -->
+            <iframe class="map-style" src="{{object.map}}"
+             frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+           </iframe>
+
+          </div>
+            </div>
+
+              </div>
+             </div>
+            </div> <!-- outter row -->
+
+    <div id="container" class="detail-slider ">
+    <div id="main" role="main">
+        <section class="slider">
+          <div class="flexslider carousel">
+            <ul class="slides">
+              {% for object in lst %}
+
+              <li >
+                <a class="col-3-a img-slides" href="{{object.get_absolute_url}}">
+                  <img  src="{{object.image.url}}" alt="">
+                  <div style="width: 100%;" class="product-box " > <!-- container -->
+                    <p style="text-align: right; font-size:1.1rem;" class="font-mirza">{{object.name}}</p>
+                    <div class="p-list " >
+                      <div style="width: 100%;" class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 p-font">
+                              <p >{{object.area}}:متراژ</p>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5 p-font">
+                             <p > {% if object.year == 0 %} نوساز{% else %}  {{object.year}} سال ساخت   {% endif %}</p>
+                            </div>
+
+                            <div  class="col-xs-6 col-sm-6 col-md-6 col-lg-3 p-font">
+                              <p>اتاق:{{object.bedroom}}</p>
+                            </div>
+                            <div  class="col-xs-6 col-sm-6 col-md-6 col-lg-12 p-font">
+                              <p style="color:#007b5e;">{% if object.type == 'frosh' %} فروش {% elif object.type == 'villa' %} ویلا  {%  elif object.type == 'rhn'  %} رهن  {%  elif object.type == 'ejare'  %} اجاره {%  elif object.type == 'proje'  %} پروژه {% endif %}  </p>
+                            </div>
+                          </div><!-- row -->
+                        </div><!-- p-list-->
+                      </div>
+                    </a>
+                  </li>
+              {% endfor %}
+
+
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+
+</div>
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('#carousel').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 210,
+        itemMargin: 5,
+        asNavFor: '#slider'
+      });
+
+      $('#slider').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        sync: "#carousel",
+
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+
+      });
+    });
+  </script>
+     <script type="text/javascript">
+        $(function(){
+          SyntaxHighlighter.all();
+        });
+        $(window).load(function(){
+          $('.flexslider').flexslider({
+            animation: "slide",
+            animationLoop: false,
+            itemWidth: 210,
+            itemMargin: 5,
+            minItems: 2,
+            maxItems: 4,
+            start: function(slider){
+              $('body').removeClass('loading');
+            }
+          });
+        });
+      </script>
+
+  <script>
+  // Get the modal
+    var modal = document.getElementById("myModal");
+
+    var sli = document.getElementById("slider");
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg");
+    var img2 = document.getElementById("myImg2");
+    var img3 = document.getElementById("myImg3");
+    var img4 = document.getElementById("myImg4");
+    var img5 = document.getElementById("myImg5");
+    var img6 = document.getElementById("myImg6");
+    var img7 = document.getElementById("myImg7");
+    var img8 = document.getElementById("myImg8");
+    var img9 = document.getElementById("myImg9");
+    var img10 = document.getElementById("myImg10");
+    var img11 = document.getElementById("myImg11");
+    var img12 = document.getElementById("myImg12");
+    var img13 = document.getElementById("myImg13");
+    var img14 = document.getElementById("myImg14");
+    var img15 = document.getElementById("myImg15");
+    var img16 = document.getElementById("myImg16");
+    var img17 = document.getElementById("myImg17");
+    var img18 = document.getElementById("myImg18");
+    var img19 = document.getElementById("myImg19");
+    var img20 = document.getElementById("myImg20");
+
+
+    var modalImg = document.getElementById("img01");
+    var modalImg2= document.getElementById("img02");
+    var modalImg3= document.getElementById("img03");
+    var modalImg4 = document.getElementById("img04");
+    var modalImg5 = document.getElementById("img05");
+    var modalImg6 = document.getElementById("img06");
+    var modalImg7 = document.getElementById("img07");
+    var modalImg8 = document.getElementById("img08");
+    var modalImg9 = document.getElementById("img09");
+    var modalImg10 = document.getElementById("img10");
+    var modalImg11 = document.getElementById("img11");
+    var modalImg12 = document.getElementById("img12");
+    var modalImg13 = document.getElementById("img14");
+    var modalImg14 = document.getElementById("img15");
+    var modalImg15 = document.getElementById("img16");
+    var modalImg16 = document.getElementById("img17");
+    var modalImg17 = document.getElementById("img18");
+    var modalImg18 = document.getElementById("img19");
+    var modalImg19 = document.getElementById("img20");
+    var modalImg20 = document.getElementById("img21");
+
+    var captionText = document.getElementById("caption");
+
+    img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      $('.flex-nav-next').hide();
+      $('.flex-nav-prev').hide();
+      console.log($('flex-nav-next'));
+
+    }
+
+    if (img2 != null ){
+    img2.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+
+    }
+  }
+  if (img3 != null ){
+  img3.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+}
+  if (img4 != null ){
+  img4.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+  }
+  if (img5 != null ){
+  img5.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+  }
+  if (img6 != null ){
+  img6.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+  }
+  if (img7 != null ){
+  img7.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+  }
+    if (img8 != null ){
+    img8.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+    }
+    }
+    if (img9 != null ){
+    img9.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+    }
+    }
+    if (img10 != null ){
+    img10.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+    }
+  }
+  if (img11 != null ){
+  img11.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+  }
+  if (img12 != null ){
+  img12.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+  }
+  if (img13 != null ){
+  img13.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+  }
+  if (img14 != null ){
+  img14.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+  }
+  if (img15 != null ){
+  img15.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+  }
+  if (img16 != null ){
+  img16.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+  }
+  if (img17 != null ){
+  img17.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+  }
+  if (img18 != null ){
+  img18.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+  }
+  if (img19 != null ){
+  img19.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+  }
+  if (img20 != null ){
+  img20.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+  }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      $('.flex-nav-next').show();
+      $('.flex-nav-prev').show();
+      modal.style.display = "none";
+    }
+  </script>
+
+  {% endblock content %}

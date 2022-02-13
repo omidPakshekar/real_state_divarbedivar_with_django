@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block content %}
+
+<div class="container">
+  <img src="{% static 'home/assets/photo/jumb3.jpg' %}" style="margin-top: 10px; width: 100%;" class="img-fluid" alt="Responsive image">
+  <div class="row">
+    <div style="text-align:right;" class="col-md-4">
+      <a  class="img-ins-home" style="text-align:right;" href="https://www.instagram.com/divar_b_divar/">
+        <img class="img-ins" src="{% static 'home/assets/photo/instagram-pic.jpg' %}" alt="">
+      </a>
+      <p class="font-Lalezar" style="text-align:center; font-size:1.1rem;">ما را در اینستاگرام دنبال کنید</p>
+
+    </div>
+    <div style="text-align: right;" class="col-md-8 index-detail home-p">
+      <p>ادرس : فاز دو معلم بعد از میدان سرگل نبش ۱۶ متری مسکن دیوار به دیوار</p>
+     
+      
+      <p><a style="color: #000080;">شماره دفتر : 01333265303</a></p>
+       <div class="small-text">
+        <p>09198164976 مدیریت دیوار به دیوار : فرزاد رافع</p>
+        <p>09114277731 مشاور فروش و پیش فروش  واحد ها مسکونی و تجاری :   میلاد گلفام</p>
+        <p>09331316262 مشاور فروش  و پیش فروش ویلا : خانم صالح نیا </p>
+        <p>09119343533 مشاور فروش و پیش فروش واحد های نسقی : کامران بلیغ پور </p>
+        <p>01333265303 مشاور اجاره واحد های مسکونی و تجاری  : خانم رنجبر </p>
+    
+   </div>
+    
+    
+    </div>
+
+  </div>
+
+  <div class="row margin-3-col">
+    <div class="col-lg-12">
+      <p style="text-align:center; font-size: 1.3rem; color:#007b5e" class="font-Lalezar">برای مشاهده ارشیو ها انتخاب کنید</p>
+    </div>
+    <div class="opct col-xlg-3 col-lg-3  col-md-6">
+      <a class="col-3-a " href="{% url 'products:list-product-category' category_slug='villa' %}">
+        <img style="width: 100%;" src="{% static 'home/assets/photo/Villa-House-1.jpg' %}" alt="عکس ویلا">
+        <p class="font-Lalezar">ویلا</p>
+      </a>
+    </div>
+
+    <div  class="opct col-xlg-3 col-lg-3 col-md-6" >
+      <a class="col-3-a" href="{% url 'products:list-product-category' category_slug='rhn-va-ejare' %}">
+        <img style="width: 100%;" src="{% static 'home/assets/photo/home3.jpg' %}" alt="عکس رهن و اجاره">
+        <p class="font-Lalezar">رهن و اجاره</p>
+      </a>
+    </div>
+    <div class="opct col-xlg-3 col-lg-3 col-md-6">
+      <a class="col-3-a" href="{% url 'products:list-product-category' category_slug='frosh' %}">
+        <img style="width: 100%;" src="{% static 'home/assets/photo/home.jpg' %}" alt="عکس فروش">
+        <p class="font-Lalezar">فروش</p>
+      </a>
+    </div>
+    <div class="opct col-xlg-3 col-lg-3 col-md-6">
+      <a class="col-3-a" href="{% url 'products:list-product-category' category_slug='proje' %}">
+        <img style="width: 100%;" src="{% static 'home/assets/photo/proje1.jpg' %}" alt="عکس فروش">
+        <p class="font-Lalezar">پروژه مسکونی</p>
+      </a>
+    </div>
+  </div>
+  <div style="margin-top: 40px;">
+   <h5 style="border-right: double; padding-right: 5px; color:#007b5e; font-size:1.5rem;" class="font-Lalezar tx-r">اخرین خانه ها</h5>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    {% for object in lst %}
+    <div style="margin-top:5px;" class="col-list-object col-lg-4 col-md-6">
+        <a class="col-3-a" href="{{ object.get_absolute_url }}">
+            <div class="image-text">
+              {% thumbnail object.image "300x300" as im %}
+              <img src="{{im.url}}" height="250px" alt="">
+              {% endthumbnail %}
+              <div  class="bottom-right">{{object.name}}</div>
+            </div>
+
+            <div style="width: 100%;" class="product-box" > <!-- container -->
+              <p class="font-mirza list-address" >  ادرس : {{object.address}} </p>
+              {% if object.type == 'ejare'  %}
+              <div>
+                <p class="font-mirza price-list" > {{object.pish}} :پیش پول</p>
+                <p  class="font-mirza price-list" > {{object.pol_mhn}} :اجاره ماهیانه<p>
+              </div>
+              {% elif object.type == 'rhn' %}
+              <div>
+                <p style="margin-top: 10%; margin-bottom: 10%;" class="font-mirza price-list" > {{object.pish}} :رهن</p>
+
+              </div>
+              {% elif object.type == 'frosh' or object.type == 'villa' or object.type == 'proje' %}
+              <div>
+                <p class="font-mirza price-list" > {{object.price}} :قیمت</p>
+                <p  class="font-mirza price-list"> {{object.price_met}} :قیمت هر متر مربع<p>
+              </div>
+              {% endif %}
+
+              <div class="p-list" style="font-size: 1.2rem; width:100%; display: inline-flex;" >
+                  <p class="font-mirza list-col3" style="{% if object.year == 99 %} margin-left: 25%; {% else %} margin-left:5% {% endif %}">{{object.area}}:متراژ</p>
+                  <p class="font-mirza list-col3" style="  {% if object.year == 0 %}  margin-left: 23%; {% else %}  margin-left: 13%;{% endif %}"> 
+                      {% if object.year == 0 %}
+                       نوساز
+                       {% else %}
+                        {% if object.year != 99 %}
+                       <p class="font-mirza pp-list" style=" display:inline-flex; margin-right:2px;">
+                          سال ساخت
+                       </p>
+
+                       <span class="font-mirza pp-list" >{{object.year}}</span>
+                       {% endif %}
+                        {% endif %}
+                </p>
+                  <p class="font-mirza list-col3"  style=" margin-left: 16%; "> {{object.bedroom}}:اتاق </p>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <p class="list-file" style="color: #007b5e;">{{object.file_number}} : شماره فایل </p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <p class="list-file" style="color:darkred;" >{% if object.type == 'frosh' %} فروش {% elif object.type == 'villa' %} ویلا  {%  elif object.type == 'rhn'  %} رهن  {%  elif object.type == 'ejare'  %} اجاره {%  elif object.type == 'proje'  %} پروژه {% endif %}</p>
+                </div>
+              </div>
+           
+             <div class="hidden-not-phone font-mirza" style=" font-size: 1.1rem; float:right; width:100%;">
+                <p class="price-list" style="color:black"> شماره دفتر : 01333261533 </p>
+                <p class="price-list" style="margin-right:2px; color:black"> {% if object.type == 'villa' %} 09331316262 {% elif object.type == 'frosh' and object.nastaghi  %} 09119343533 {%  elif object.type == 'frosh' %} 09114277731 {% else %} 01333265503 {% endif %} : شماره تماس مشاور -  </p>
+                <p></p>
+              </div>
+
+                <p class="font-Lalezar"> مدیر فروش : فرزاد رافع</p>
+                <p style="font-size:1rem;" class="font-Lalezar"> مشاور فروش : {% if object.type == 'villa' %} خانم صالح نیا {% elif object.type == 'frosh' and object.nastaghi %} کامران بلیغ پور {%  elif object.type == 'frosh' %}  میلاد گلفام{% else %} خانم رنجبر {% endif %} <</p>
+                
+              <div class="call-block hidden-phone" >
+                <a class="btn btn-dark"  style="width:38%;"  href="tel:{% if object.type == 'villa' %} 09331316262 {% elif object.type == 'frosh' and object.nastaghi  %} 09119343533 {%  elif object.type == 'frosh' %} 09114277731 {% else %} 01333265503 {% endif %}">تماس باما</a>
+                <a style="margin-left: 5%; width:38%;" class="btn btn-dark" href="tel:01333265303"> تماس با دفتر </a>
+              </div>
+
+              
+            </div>
+        </a>
+      </div>
+  {% endfor %}
+  </div> <!-- row -->
+</div>
+
+{% endblock content %}
